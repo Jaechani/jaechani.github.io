@@ -1,0 +1,51 @@
+:root {
+  color: #172033;
+  background: #f5f7fb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: inherit; }
+
+.site-header {
+  align-items: center;
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid #e5e9f2;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.brand { color: #0b63ce; font-size: 1.15rem; font-weight: 800; text-decoration: none; }
+.site-navigation { display: flex; gap: 1.25rem; }
+.site-navigation a { font-weight: 700; text-decoration: none; }
+.site-navigation a:hover, .site-navigation a:focus-visible { color: #0b63ce; }
+.nav-toggle { display: none; }
+
+main { margin: 0 auto; max-width: 1100px; padding: 0 1rem; }
+.hero { padding: clamp(5rem, 14vw, 10rem) 0 6rem; }
+.eyebrow { color: #0b63ce; font-size: .8rem; font-weight: 800; letter-spacing: .12em; margin: 0 0 .5rem; text-transform: uppercase; }
+h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); margin-bottom: 1rem; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+.hero-copy { color: #526078; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+.content-section { border-top: 1px solid #dfe5ef; padding: 5rem 0; }
+.project-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.project-card, .game-placeholder { background: #fff; border-radius: 1rem; box-shadow: 0 1rem 2.5rem rgba(31, 53, 88, .08); padding: 1.5rem; }
+.game-placeholder { background: #eaf3ff; }
+.site-footer { color: #526078; padding: 2rem 1rem 3rem; text-align: center; }
+
+@media (max-width: 640px) {
+  .nav-toggle { background: transparent; border: 1px solid #cbd5e1; border-radius: .5rem; display: block; font: inherit; padding: .45rem .7rem; }
+  .site-navigation { background: #fff; border-bottom: 1px solid #e5e9f2; display: none; flex-direction: column; gap: .75rem; left: 0; padding: 1rem; position: absolute; right: 0; top: 100%; }
+  .site-navigation.is-open { display: flex; }
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
